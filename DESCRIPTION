@@ -1,0 +1,14 @@
+Package: artuik
+Type: Package
+Title: Tuik data cleaning
+Version: 0.1.0
+Author@R: person("Refik", "Turkeli", email = "refikt@audio.com.tr",
+    "role" = c("aut", "cre"))
+Description: A package for cleaning datas retrieved from TUIK
+    Turkey's statistics agency.
+License: Private, only used within Audio Elektronik A.S. Turkey
+LazyData: TRUE
+RoxygenNote: 5.0.1
+Imports:
+  dplyr
+Suggests: testthat
