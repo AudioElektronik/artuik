@@ -28,7 +28,7 @@ Later steps:
 10. Generate report
 11. Format:
     -   Rows: Region, Year (order is important)
-    -   Column: Dimension, Month, Period, Measurment (in order) 12: Download as CSV.
+    -   Column: Dimension, Month, Period, Measurment (in order) 12: Update and download as CSV.
 
 Format of the rows are `City(Town) | Year | Population`
 
@@ -58,7 +58,7 @@ Later steps:
     -   Row: Region, Year, Month (in order)
     -   Column: Period, Dimension, Measurement (in order)
 
-12. Download as CSV
+12. Update and download as CSV.
 
 [Link to step 5](https://biruni.tuik.gov.tr/medas/?kn=73&locale=en)
 
