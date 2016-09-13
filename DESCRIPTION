@@ -10,5 +10,6 @@ License: Private, only used within Audio Elektronik A.S. Turkey
 LazyData: TRUE
 RoxygenNote: 5.0.1
 Imports:
-  dplyr
+  dplyr,
+  tidyr
 Suggests: testthat
