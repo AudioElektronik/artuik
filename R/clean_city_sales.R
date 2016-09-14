@@ -1,19 +1,4 @@
-#' Town population of Turkey
-#'
-#' A dataset containing all of Turkey's towns populations
-#'
-#' @format A data.frame with 4 variables
-#' \describe{
-#'    \item{city}{name of the city}
-#'    \item{town}{name of the town}
-#'    \item{year}{year the measurement was taken}
-#'    \item{population}{population of the town}
-#' }
-#'
-#' @source explained extensively on \code{inst/extdata/README.md}
-"town_population"
-
-#' Cleaning town population data from TUIK
+#' Cleaning city sales data from TUIK
 #'
 #' The process of obtaining raw data is explained in
 #' \code{inst/extdata/README.md}. This function takes that raw data and makes
