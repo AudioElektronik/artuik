@@ -2,4 +2,5 @@
 
 export(clean_city_sales)
 export(clean_town_population)
+export(clean_town_sales)
 importFrom(dplyr,"%>%")

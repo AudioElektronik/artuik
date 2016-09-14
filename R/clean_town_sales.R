@@ -1,20 +1,20 @@
-#' City apartment sales of Turkey
+#' Town apartment sales of Turkey
 #'
-#' A dataset containing apartment sales of Turkey's cities
+#' A dataset containing apartment sales of Turkey's towns
 #'
 #' @format A data.frame with 5 variables
 #' \describe{
 #'    \item{city}{name of the city}
-#'    \item{sale_type}{type of the sale, first hand or second hand}
+#'    \item{town}{name of the town}
 #'    \item{year}{year the measurement was taken}
 #'    \item{month}{month the measurement was taken}
 #'    \item{sale}{amount of the sale}
 #' }
 #'
 #' @source explained extensively on \code{inst/extdata/README.md}
-"city_sales"
+"town_sales"
 
-#' Cleaning city sales data from TUIK
+#' Cleaning town sales data from TUIK
 #'
 #' The process of obtaining raw data is explained in
 #' \code{inst/extdata/README.md}. This function takes that raw data and makes
@@ -25,27 +25,25 @@
 #'
 #' @param file_path path of the city sales data folder
 #' @export
-clean_city_sales <-
-  function(folder_path = system.file("extdata/city_sales",
+clean_town_sales <-
+  function(folder_path = system.file("extdata/town_sales",
                                      package = "artuik")) {
     clean_file <- function(file_path) {
       readr::read_delim(
         file.path(folder_path, file_path),
         delim = "|",
-        col_names = c("city",
-                      "sale_type_long",
+        col_names = c("city_town",
                       "year",
                       "month",
                       "sale",
                       "NA_COLUMN"),
         col_types = readr::cols_only(
-          city = "c",
-          sale_type_long = "c",
+          city_town = "c",
           year = "i",
           month = "c",
           sale = "d"
         ),
-        skip = 3
+        skip = 4
       ) %>%
         remove_last_NA_row()
     }
@@ -59,18 +57,14 @@ clean_city_sales <-
       # There are merged cells in the csv, filling them with the last
       # seen value.
       dplyr::mutate_each(dplyr::funs(fill_merged_cells),
-                         city, sale_type_long, year) %>%
+                         city_town, year) %>%
+
+      # Splitting city and town to different variables
+      split_city_town() %>%
+
       dplyr::mutate(month = get_tuik_month(month)) %>%
 
-      # Friendly names for sale_type
-      dplyr::left_join(tibble::frame_data(
-        ~sale_type_long            , ~sale_type,
-        "1. (First Sales)"         , "first_hand",
-        "2. (Second Hand Sales)"   , "second_hand"
-        ), by = "sale_type_long") %>%
-      dplyr::select(-sale_type_long) %>%
-
       # Ordering columns
-      dplyr::select(city, sale_type, year, month, sale)
+      dplyr::select(city, town, year, month, sale)
 
   }

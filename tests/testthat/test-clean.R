@@ -31,3 +31,14 @@ test_that("Tests that city sales data is clean compared to the reference", {
   # When new data is downloaded from tuik, this part will fail
   expect_equal_to_reference(city_sales, "city_sales.rds")
 })
+
+test_that("Tests that town sales data is clean compared to the reference", {
+  town_sales <- clean_town_sales()
+
+  # Check that columns are same
+  expect_equal(colnames(town_sales),
+               c("city", "town", "year", "month", "sale"))
+
+  # When new data is downloaded from tuik, this part will fail
+  expect_equal_to_reference(town_sales, "town_sales.rds")
+})
