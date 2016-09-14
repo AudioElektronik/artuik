@@ -29,7 +29,7 @@ clean_town_population <-
                                    package = "artuik")) {
     readr::read_delim(
       file_path,
-      delim = '|',
+      delim = "|",
       col_names = c("city_town",
                     "year",
                     "population",

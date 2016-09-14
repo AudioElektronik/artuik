@@ -29,5 +29,13 @@ split_city_town <- function(frame) {
     dplyr::select(-city_town)
 }
 
+#' Getting month as numeric from TUIK data
+#'
+#' TUIK gives months like this "01-January". This function is just for getting
+#' c(1) out of that.
+get_tuik_month <- function(month_vec) {
+  as.integer(arutil::get_regex_pattern(month_vec, "([0-9]+)-"))
+}
+
 #' @importFrom dplyr %>%
 NULL
