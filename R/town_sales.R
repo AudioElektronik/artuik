@@ -12,7 +12,7 @@
 get_town_sales <- function(istanbul_part = FALSE,
                            first_sale = FALSE) {
   town_sales <- if (istanbul_part) {
-    add_istanbul_part(town_sales)
+    arutil::add_istanbul_part(town_sales)
   } else {
     town_sales
   }
