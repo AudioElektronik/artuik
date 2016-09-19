@@ -18,11 +18,17 @@ get_town_sales <- function(istanbul_part = FALSE,
   }
 
   if (first_sale) {
+    # If first sales are requested, getting each cities first sales to
+    # total sale ratio to make an approximation
     city_sales <- get_city_sales(first_total_ratio = TRUE,
                                  istanbul_part = istanbul_part) %>%
       dplyr::select(city, year, month, first_total_ratio)
 
+    # Merging the city ratio list with the town sales list. For each town
+    # the same ratio will be used. This is just an approximation
     town_sales <- town_sales %>%
+      # Most likely there will be no NA's on the join because city sales
+      # data exists for wider date range.
       dplyr::left_join(city_sales, by = c("city", "year", "month")) %>%
       dplyr::mutate(first_hand = round(first_total_ratio * sale, 0)) %>%
       dplyr::select(-first_total_ratio)
