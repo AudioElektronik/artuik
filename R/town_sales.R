@@ -37,15 +37,14 @@ get_town_sales <- function(istanbul_part = FALSE,
   town_sales
 }
 
-#' Istanbul europe side home sales to total ratio
+#' (Istanbul europe side home sales / Istanbul home sales) ratio
 #'
 #' \code{town_sales} data has the granularity to calculate this ratio.
 #' Here the calcualted ratio is the total home sales. Normally \code{town_sales}
-#' data is not complete because there is no data for every town, but for
-#' İstanbul, it is complete enough.
+#' data is not complete for each town of a city but Istanbul is the biggest
+#' city so it is complete in this case.
 #'
-#' @param average rather then returning the ratio per month, return one number
-#'    for the average ratio.
+#' @param get historical average, rather then returning the ratio per month. 
 #'
 #' @export
 get_europe_istanbul_ratio <- function(average = FALSE) {
