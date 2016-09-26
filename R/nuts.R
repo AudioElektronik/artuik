@@ -3,7 +3,7 @@
 #' @source http://ec.europa.eu/eurostat/en/web/products-manuals-and-guidelines/-/KS-RA-07-023
 #'
 #' @export
-ibss_level <- tibble::frame_data(
+nuts_level <- tibble::frame_data(
   ~level_1           ,  ~level_2   ,  ~city           ,
   "İstanbul         ",	"İstanbul ",	"İstanbul      ",
   "Batı Marmara     ",	"Tekirdağ ",	"Tekirdağ      ",
