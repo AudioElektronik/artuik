@@ -43,5 +43,6 @@ clean_town_population <-
     ) %>%
       remove_last_NA_row() %>%
       split_city_town() %>%
-      dplyr::select(city, town, year, population)
+      dplyr::select(city, town, year, population) %>%
+      arutil::make_frame_utf8()
   }

@@ -87,4 +87,5 @@ nuts_level <- tibble::frame_data(
   "Güneydoğu Anadolu",	"Mardin   ",	"Şırnak        ",
   "Güneydoğu Anadolu",	"Mardin   ",	"Siirt         "
   ) %>%
-  dplyr::mutate_all(dplyr::funs(trimws(.))) # trim white space
+  dplyr::mutate_all(dplyr::funs(trimws(.))) %>% # trim white space
+  arutil::make_frame_utf8()
