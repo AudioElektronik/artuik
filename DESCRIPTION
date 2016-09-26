@@ -10,7 +10,19 @@ License: Private, only used within Audio Elektronik A.S. Turkey
 LazyData: TRUE
 RoxygenNote: 5.0.1
 Imports:
-  dplyr,
-  readr,
-  tidyr
-Suggests: testthat
+    dplyr,
+    readr,
+    tidyr
+Suggests:
+    testthat
+Collate:
+    'city_sales.R'
+    'city_town.R'
+    'clean_city_sales.R'
+    'clean_town_population.R'
+    'clean_town_sales.R'
+    'clean_utils.R'
+    'nuts.R'
+    'town_population.R'
+    'town_sales.R'
+    'tuik_place.R'

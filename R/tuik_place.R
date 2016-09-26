@@ -1,21 +1,17 @@
-#' Getting cities available in tuik
+#' Towns of Turkey according to tuik
 #'
-#' This function returns the cities of Turkey according to tuik data.
+#' @format A data.frame with 2 variables
+#' \describe{
+#'    \item{city}{name of the city}
+#'    \item{town}{name of the town}
+#' }
 #'
-#' @export
-tuik_city <- function() {
-  tuik_town() %>%
-    distinct(city) %>%
-    .$city
-}
+#' @source town data taken from \code{\link{clean_town_population}}
+"tuik_towns"
 
-
-#' Getting towns available in tuik
+#' Cities of Turkey according to tuik
 #'
-#' This function returns the towns of Turkey according to tuik data.
+#' Character vector of cities.
 #'
-#' @export
-tuik_town <- function() {
-  town_population %>%
-    dplyr::distinct(city, town)
-}
+#' @source city data taken from \code{\link{clean_town_population}}
+"tuik_cities"
