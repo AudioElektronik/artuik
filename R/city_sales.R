@@ -21,7 +21,7 @@ get_city_sales <- function(istanbul_part = FALSE,
   }
 
   # Putting first_hand and second_hand in their own column
-  city_sales <- city_sales %>%
+  city_sales <- artuik::city_sales %>%
     tidyr::spread(sale_type, sale)
 
   # Getting the ratio of first hand sales to total sales

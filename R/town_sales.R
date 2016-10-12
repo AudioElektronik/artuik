@@ -14,7 +14,7 @@ get_town_sales <- function(istanbul_part = FALSE,
   town_sales <- if (istanbul_part) {
     arutil::add_istanbul_part(town_sales)
   } else {
-    town_sales
+    artuik::town_sales
   }
 
   if (first_sale) {
@@ -44,7 +44,7 @@ get_town_sales <- function(istanbul_part = FALSE,
 #' data is not complete for each town of a city but Istanbul is the biggest
 #' city so it is complete in this case.
 #'
-#' @param get historical average, rather then returning the ratio per month. 
+#' @param get historical average, rather then returning the ratio per month.
 #'
 #' @export
 get_europe_istanbul_ratio <- function(average = FALSE) {
