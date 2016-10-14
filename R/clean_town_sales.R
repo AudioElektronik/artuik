@@ -65,6 +65,7 @@ clean_town_sales <-
       dplyr::mutate(month = get_tuik_month(month)) %>%
 
       # Ordering columns
-      dplyr::select(city, town, year, month, sale)
+      dplyr::select(city, town, year, month, sale) %>%
 
+      arutil::make_frame_utf8()
   }

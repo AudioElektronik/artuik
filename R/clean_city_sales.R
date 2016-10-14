@@ -71,6 +71,8 @@ clean_city_sales <-
       dplyr::select(-sale_type_long) %>%
 
       # Ordering columns
-      dplyr::select(city, sale_type, year, month, sale)
+      dplyr::select(city, sale_type, year, month, sale) %>%
+
+      arutil::make_frame_utf8()
 
   }
