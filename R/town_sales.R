@@ -58,7 +58,7 @@ get_europe_istanbul_ratio <- function(average = FALSE) {
     dplyr::select(-city)
 
   # Getting the europe side data
-  europe <- add_istanbul_part(town_sales) %>%
+  europe <- arutil::add_istanbul_part(town_sales) %>%
     dplyr::filter(city == "İstanbul (Avrupa)") %>%
     dplyr::group_by(city, year, month) %>%
     dplyr::summarise(europe = sum(sale)) %>%

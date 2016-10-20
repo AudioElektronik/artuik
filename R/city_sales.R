@@ -45,7 +45,7 @@ get_city_sales <- function(istanbul_part = FALSE,
 #'
 #' @export
 add_istanbul_part_city_sales <- function(city_sales) {
-  no_istanbul <- city_sales %>%
+  no_istanbul <- artuik::city_sales %>%
     dplyr::filter(city != "İstanbul")
 
   istanbul_w_parts <- city_sales %>%
