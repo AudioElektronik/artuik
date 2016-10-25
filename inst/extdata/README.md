@@ -20,7 +20,7 @@ Later steps:
 5.  Address Based Population Registration System Results (M)
 6.  Variables:
     -   Measurements: Population Of SRE-1, SRE-2, Provinces and Districts
-    -   Dimensions: Village/City (Select City)
+    -   Dimensions: You don't have to select this
 
 7.  Click `Add Measurements`
 8.  Period: Annual (Select last available year)
